@@ -1,0 +1,10 @@
+function classificarConsumo(consumo: number): string {
+    if (consumo < 0) return "Erro";
+    if (consumo <= 100) return "Faixa 1";
+    if (consumo <= 220) return "Faixa 2";
+    return "Faixa 3";
+}
+
+[0, 100, 101, 220, 221].forEach(v => {
+    console.log(v, classificarConsumo(v));
+});
