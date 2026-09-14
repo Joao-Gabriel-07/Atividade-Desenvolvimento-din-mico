@@ -1,0 +1,21 @@
+interface Familia {
+    id: string;
+    rendaPerCapita: number;
+    cadastroAtivo: boolean;
+    possuiIdoso: boolean;
+}
+
+function avaliarBeneficio(familia: Familia): string {
+    if (familia.rendaPerCapita > 706 || !familia.cadastroAtivo) return "Não elegível";
+    if (familia.possuiIdoso) return "Elegível com prioridade";
+    return "Elegível sem prioridade";
+}
+
+const familias: Familia[] = [
+    { id: "F1", rendaPerCapita: 500, cadastroAtivo: true, possuiIdoso: true },
+    { id: "F2", rendaPerCapita: 600, cadastroAtivo: true, possuiIdoso: false },
+    { id: "F3", rendaPerCapita: 800, cadastroAtivo: true, possuiIdoso: true },
+    { id: "F4", rendaPerCapita: 300, cadastroAtivo: false, possuiIdoso: false }
+];
+
+familias.forEach(f => console.log(f.id, avaliarBeneficio(f)));
