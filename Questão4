@@ -1,0 +1,14 @@
+type Perfil = "aluno" | "professor" | "coordenador" | string;
+
+function verificarAcesso(perfil: Perfil): string {
+    switch (perfil) {
+        case "aluno": return "Acesso Área do Aluno";
+        case "professor": return "Acesso Área do Professor";
+        case "coordenador": return "Acesso Área da Coordenação";
+        default: return "Acesso negado. Perfil desconhecido.";
+    }
+}
+
+["aluno", "professor", "coordenador", "visitante"].forEach(p => {
+    console.log(p, verificarAcesso(p));
+});
