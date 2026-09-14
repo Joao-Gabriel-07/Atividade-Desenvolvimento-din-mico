@@ -1,0 +1,10 @@
+function alertaTemperatura(temp: number): string {
+    if (temp < -20 || temp > 100) return "Inválido";
+    if (temp <= 29) return "Normal";
+    if (temp <= 39) return "Atenção";
+    return "Crítico";
+}
+
+[-25, 20, 29, 30, 39, 40, 105].forEach(t => {
+    console.log(t, alertaTemperatura(t));
+});
